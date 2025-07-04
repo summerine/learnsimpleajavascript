@@ -2,7 +2,7 @@ console.log("Welcome to grader! ");
 
 let prompt = require("prompt-sync")();
 
-let gradeNumber = prompt("What is your grade? ");
+let gradeNumber = Number(prompt("What is your grade? "));
 
 function gradeTracker(gradeNumber){
     if (gradeNumber >= 90 && gradeNumber <= 100){
@@ -12,7 +12,7 @@ function gradeTracker(gradeNumber){
     } else if(gradeNumber >=  60 && gradeNumber <= 69){
     console.log("Your Grade is C");
     } else if(gradeNumber >= 50 && gradeNumber <= 59){
-    console.log("Your Gradde is D");
+    console.log("Your Grade is D");
     } else if(gradeNumber <= 49){
     console.log("Your Grade is E")
     } else {
@@ -20,4 +20,4 @@ function gradeTracker(gradeNumber){
     }
 }
 
-gradeTracker(gradeNumber);
+console.log(gradeTracker(gradeNumber));
