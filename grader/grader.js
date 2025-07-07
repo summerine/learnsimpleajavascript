@@ -2,22 +2,34 @@ console.log("Welcome to grader! ");
 
 let prompt = require("prompt-sync")();
 
-let gradeNumber = Number(prompt("What is your grade? "));
+let numberofStudents = Number(prompt("What is the number of students? "));
 
-function gradeTracker(gradeNumber){
-    if (gradeNumber >= 90 && gradeNumber <= 100){
-    console.log("Your Grade is A");
-    } else if(gradeNumber >= 70 && gradeNumber <= 89){
-    console.log("Your Grade is B");
-    } else if(gradeNumber >=  60 && gradeNumber <= 69){
-    console.log("Your Grade is C");
-    } else if(gradeNumber >= 50 && gradeNumber <= 59){
-    console.log("Your Grade is D");
-    } else if(gradeNumber <= 49){
-    console.log("Your Grade is E")
-    } else {
-    console.log("Invalid Number!")
+let studentNames = [];
+let numericGrades = [];
+let studentGrades = [];
+
+for (let i = 0; i < numberofStudents.length; i++){
+    let name = prompt("What's the student's name? ");
+    let grade = Number(prompt("What's the student's grade? "));
+
+    if ( grade < 0 || grade > 100){
+        console.log("The grade number is invalid! ");
+        i--;
+        continue;
     }
 }
 
-console.log(gradeTracker(gradeNumber));
+let gradeLetter = "";
+
+    if (grade >= 90 && grade <= 100){
+    gradeLetter = "A";
+    } else if(grade >= 70 && grade <= 89){
+    gradeLetter = "B";
+    } else if(grade >=  60 && grade <= 69){
+    gradeLetter = "C";
+    } else if(grade >= 50 && grade <= 59){
+    gradeLetter = "D";
+    } else (gradeNumber <= 49){
+    gradeLetter = "E";
+    } 
+
