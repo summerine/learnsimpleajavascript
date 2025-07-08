@@ -1,23 +1,23 @@
-console.log("Welcome to grader! ");
+console.log("Welcome to grader!");
 
-let prompt = require("prompt-sync")();
+const prompt = require("prompt-sync")();
 
-let numberofStudents = Number(prompt("What is the number of students? "));
+let numberOfStudents = Number(prompt("How many students? "));
 
 let studentNames = [];
 let numericGrades = [];
 let studentGrades = [];
 
-for (let i = 0; i < numberofStudents.length; i++){
-    let name = prompt("What's the student's name? ");
-    let grade = Number(prompt("What's the student's grade? "));
+for (let i = 0; i < numberOfStudents; i++){
+    let name = prompt(`Enter name of students ${i + 1}: `);
+    let grade = Number(prompt(`Enter grade for ${name} (0-100): `));
 
-    if ( grade < 0 || grade > 100){
+    if ( grade < 0 || grade > 100 || isNaN (grade)){
         console.log("The grade number is invalid! ");
         i--;
         continue;
     }
-}
+
 
 let gradeLetter = "";
 
@@ -29,7 +29,16 @@ let gradeLetter = "";
     gradeLetter = "C";
     } else if(grade >= 50 && grade <= 59){
     gradeLetter = "D";
-    } else (gradeNumber <= 49){
+    } else {
     gradeLetter = "E";
     } 
 
+    studentNames.push(name);
+    numericGrades.push(grade);
+    studentGrades.push(gradeLetter);
+}
+
+console.log("\n The Student Results: ");
+for (let i = 0; i < studentNames.length; i++){
+    console.log(`${i + 1}. Name: ${studentNames[i]}, Grade Number: ${numericGrades[i]}, Grade Letter: ${studentGrades[i]}`)
+}
