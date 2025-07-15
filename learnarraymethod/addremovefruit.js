@@ -2,15 +2,15 @@ console.log("Add / Remove Fruit from the Basket");
 
 let prompt = require('prompt-sync')();
 
-let fruits = [];
+let fruits = []; //an empty array
 
 for(let i = 0; i < 3; i++){
     let fruitQuestion = prompt("What's your favourite fruit? ");
-    fruits.push(fruitQuestion);
+    fruits.push(fruitQuestion); //push the fruitquestion element to the fruit array
 
 }
 
-let removedFruit = fruits.pop();
+let removedFruit = fruits.pop(); //removed an element from the highest array / last index 
 
 console.log("The removed fruit: ");
 console.log(removedFruit);
