@@ -9,9 +9,13 @@ for (let i = 0; i < 3; i++){
     reversedOrderNames.push(orderNames);
 }
 
-let reversed = reversedOrderNames.reverse();
+let reversedNames = reversedOrderNames.reverse();
 
-//console.log('Reversed! ', `${reversed}`)
+//console.log('Reversed! ', `${reversedNames}`)
 
-console.log('Reversed names: ', reversed.join(", ")); //take all items in array an joins them in a single string 
+console.log('Reversed names: ', reversedNames.join(", ")); //take all items in array an joins them in a single string 
+
+let reversedAgain = reversedNames.reverse(); //reverse to the original 
+
+console.log('Original reverse version: ', reversedAgain.join(", "))
 
